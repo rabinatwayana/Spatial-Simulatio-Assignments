@@ -4,16 +4,8 @@
 * Author: rabinatwayana
 * Tags: 
 */
-
-//	reflex update_actionArea {
-//		write self.location;
-//		action_area <- line(self.location, self.location + {1.0,0.0});
-//		write self.location + {1.0,0.0};
-//		
-//	}
 model movement
 
-/* Insert your model definition here */
 global {
 
 	init {
@@ -93,29 +85,19 @@ species goats skills: [moving] {
 
 grid grass {
 //	float bio <- rnd(10.0);
-	float bio <- 1.0;
-
-	reflex growth {
-		bio <- bio + 0.1;
-	}
-
+//	reflex growth {
+//		bio <- bio + 0.1;
+//	}
 	aspect default {
-//		draw square(1) color: rgb(0, int(bio * 25), 0) border: #grey;
+	//		draw square(1) color: rgb(0, int(bio * 25), 0) border: #grey;
 		draw square(1) color: rgb(190, 255, 205);
 	}
 
 }
 
-experiment main_experiment type: gui  {
-	
-//	width:400; height: 200;
-	
+experiment main_experiment type: gui {
 	output {
-		display map  {
-			
-			
-//			size: {800, 600};
-//			width 
+		display map {
 			species grass aspect: default;
 			species cows aspect: default;
 			species sheep aspect: default;
@@ -128,24 +110,4 @@ experiment main_experiment type: gui  {
 	}
 
 }
-//}
 
-
-//	output {
-//		display map type: opengl {
-//			species cows aspect: cow_3d;
-//		}
-//
-//	}
-
-
-//	aspect cow_3d {
-//		pair<float, point> r0 <- -90::{1, 0, 0};
-//		pair<float, point> pitch <- 0::{1, 0, 0};
-//		pair<float, point> roll <- 0::{1, 0, 0};
-//		pair<float, point> yaw <- heading::{1, 0, 0};
-////		draw obj_file("includes/cow.obj", rotation_composition(r0, pitch, roll, yaw)) at: location + {0, 0, 3} rotate: heading - 90 color: rgb(20, 50, 250);
-//    	draw obj_file("includes/cow.obj") at: location + {0, 0, 0} rotate: heading - 90 color: rgb(20, 50, 250);
-////}
-//	
-//	}
